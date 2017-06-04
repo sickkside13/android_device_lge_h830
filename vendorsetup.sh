@@ -1,1 +1,1 @@
-add_lunch_combo du_h830-userdebug
+add_lunch_combo pa_h830-userdebug
