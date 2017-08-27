@@ -1,5 +1,5 @@
 #
-# Copyright 2016 The CyanogenMod Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,16 +14,11 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+# This file is executed by build/envsetup.sh, and can use anything
+# defined in envsetup.sh.
+#
+# In particular, you can add lunch options with the add_lunch_combo
+# function: add_lunch_combo generic-eng
 
-# Inherit from h815 device
-$(call inherit-product, device/lge/h830/device.mk)
-
-# Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := h830
-PRODUCT_NAME := full_h830
-PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-H830
-PRODUCT_MANUFACTURER := LGE
+add_lunch_combo omni_h830-userdebug
+add_lunch_combo omni_h830-eng
