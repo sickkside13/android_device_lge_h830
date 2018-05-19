@@ -1,12 +1,16 @@
 $(call inherit-product, device/lge/h830/full_h830.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common xenonhd stuff.
+$(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
-# Overlays (inherit after vendor/cm to ensure we override it)
+# Overlays (inherit after vendor/xenonhd to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_NAME := lineage_h830
+PRODUCT_NAME := xenonhd_h830
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.xenonhd.maintainer=Sickkside13
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g5" \
